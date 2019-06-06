@@ -50,7 +50,7 @@ def update_ssid(ssid_prefix, serial_last_four):
 
 	with open('/etc/hostapd/hostapd.conf') as hostapd_conf:
 		for line in hostapd_conf:
-			if ssid_prefix in line:
+			if ssid_prefix + ' ' + serial_last_four in line:
 				ssid_correct = True
 
 	if ssid_correct == False:
